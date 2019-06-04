@@ -153,7 +153,7 @@
     <head>
     </head>
     <body>
-        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <div id="app-6">
             <p>{{ message }}</p>
             <input v-model="message">
@@ -209,32 +209,29 @@
 </html> -->
 
 
-
 <!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
-        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
-        <div id="app-8">
-            <p>{{ message }}</p>
-            <p>{{ reverseMessage }}</p>
-        </div>
-    </body>
-    <script>
-            let vm = new Vue({
-                el: "#app-8",
-                data: {
-                    message: "Hello Worldish"
-                },
-                computed: {
-                    reverseMessage: function () {
-                        return this.message.split('').reverse().join('')
-                    }
+<head>
+</head>
+<script src="https:cdn.jsdelivr.net/npm/vue"></script>
+<body>
+    <div id="app-8">
+        <p>{{ message }}</p>
+        <p>{{ reverseMessage }}</p>
+    </div>
+</body>
+<script>
+        let vm = new Vue({
+            el: "#app-8",
+            data: {
+                message: "Hello Worldish"
+            },
+            computed: {
+                reverseMessage: function () {
+                    return this.message.split('').reverse().join('')
                 }
-            })
-        </script>
+            }
+        })
+    </script>
 </html>
-
-
 
