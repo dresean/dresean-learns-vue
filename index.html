@@ -3,7 +3,7 @@
     <head>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app">
             {{ message }}
         </div>
@@ -25,7 +25,7 @@
         <title>Learn Vue!</title>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app-2">
             <span v-bind:title="message">
                 Hover your mouse over me to get a new message!
@@ -54,7 +54,7 @@
     <head>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="">
 
         </div>
@@ -75,7 +75,7 @@
     <head>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app-3">
             <span v-if="seen">
                 Now you see me!
@@ -97,7 +97,7 @@
     <head>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app-4">
             <ol>
                 <li v-for="todo in todos">{{ todo.text }}</li>
@@ -125,7 +125,7 @@
     <head>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app-5">
             <p>{{ message }}</p>
             <button v-on:click="reverseMessage">
@@ -153,7 +153,7 @@
     <head>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app-6">
             <p>{{ message }}</p>
             <input v-model="message">
@@ -175,7 +175,7 @@
     <head>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app-7">
             <ol>
                 <todo-item
@@ -207,4 +207,34 @@
         </div>
     </body>
 </html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app-8">
+            <p>{{ message }}</p>
+            <p>{{ reverseMessage }}</p>
+        </div>
+    </body>
+    <script>
+            let vm = new Vue({
+                el: "#app-8",
+                data: {
+                    message: "Hello Worldish"
+                },
+                computed: {
+                    reverseMessage: function () {
+                        return this.message.split('').reverse().join('')
+                    }
+                }
+            })
+        </script>
+</html>
+
+
 
