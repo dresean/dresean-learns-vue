@@ -43,6 +43,12 @@
 </html> -->
 
 
+
+
+
+
+
+
 <!-- <!DOCTYPE html>
 <html>
     <head>
@@ -54,6 +60,14 @@
         </div>
     </body>
 </html> -->
+
+
+
+
+
+
+
+
 
 
 <!-- <!DOCTYPE html>
@@ -103,7 +117,7 @@
         </script>
     </body>
 </html> -->
-
+<!-- 
 
 
 <!DOCTYPE html>
@@ -132,4 +146,65 @@
             }
         })
     </script>
-</html>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app-6">
+            <p>{{ message }}</p>
+            <input v-model="message">
+        </div>
+    </body>
+    <script>
+        let app6 = new Vue({
+            el: "#app-6",
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+    </script>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app-7">
+            <ol>
+                <todo-item
+                    v-for:"item in groceryList"
+                    v-bind:todo="item"
+                    b-bind:key="item.id"
+                ></todo-item>
+            </ol>
+            <script>
+                    Vue.component('todo-item', {
+                        props: ['todo'],
+                        template: '<li>{{ todo.text }}</li>'
+                    })
+                    let app7 = new Vue({
+                        el: "#app-7",
+                        data: {
+                            groceryList: [
+                                {id: 0, text: 'Vegetables'},
+                                {id: 2, text: 'Fruit'},
+                                {id: 3, text: 'Cheese'},
+                                {id: 4, text: 'Eggs'},
+                                {id: 5, text: 'Dairy'},
+                                {id: 6, text: 'Not Tomatoes'},
+                                {id: 7, text: 'Almost Tomatoes'}
+                            ]
+                        }
+                    })
+                </script>
+        </div>
+    </body>
+</html> -->
+
