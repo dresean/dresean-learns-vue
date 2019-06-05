@@ -268,11 +268,7 @@
 </html>
  -->
 
-
-
-
-
-
+<!-- 
 <!DOCTYPE html>
 <html>
     <head>
@@ -305,4 +301,102 @@
                 })
             </script>
     </body>
+</html> -->
+
+ <!-- <!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+        <div id="app-11">
+            <p>Ask a yes or no question:
+                </br>
+                <input v-model="question">
+            </p>
+            <p>{{ answer }}</p>
+        </div>
+        <script>
+                const watchVm = new Vue({
+                    el: '#app-11',
+                    data: {
+                        question: '',
+                        answer: 'I cannot give you an answer until you ask a question!'
+                    },
+                    watch: {
+                        question: function (newQuestion, oldQuestion) {
+                            this.answer = 'Waiting for you to stop typing...'
+                            this.debouncedGetAnswer()
+                        }
+                    },
+                    created: function () {
+                        this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
+                    },
+                    methods: {
+                        getAnswer: function () {
+                            if(this.question.indexOf('?') == -1) {
+                                this.answer = 'Questions usually end with a "?" ;P'
+                                return
+                            }
+                            this.answer = 'Thinking...'
+                            let vm = this
+                            axios.get('https://yesno.wtf/api')
+                            .then(function (response) {
+                                vm.answer = _.capitalize(response.data.answer)
+                            })
+                            .catch(function (err) {
+                                vm.answer = 'Error! Could not reach the api!' + err
+                            })
+                        }
+                    }
+                })
+            </script>
+    </body>
+</html> -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app">
+            <button v-if="error"
+            :style="[stylesObject, {color: 'red'}]">
+            This does nothing
+        </button>
+        <button
+        v-else
+        @click="handleClick"
+        :style="[stylesObject, {color: 'green'}]">
+            Click Me!
+        </button>
+        </div>
+        <script>
+                let vm = new Vue({
+                    el: "#app",
+                    data: {
+                        error: false,
+                        stylesObject: {
+                            'justify-content': 'center',
+                        }
+                    },
+                    methods: {
+                        handleClick: function () {
+                            return window.alert('Good job!')
+                        }
+                    }
+                })
+            </script>
+    </body>
 </html>
+
+
