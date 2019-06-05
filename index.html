@@ -236,7 +236,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
     </head>
@@ -266,21 +266,43 @@
             </script>
     </body>
 </html>
+ -->
 
 
 
 
 
 
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
-
     </head>
+    <script src="https:cdn.jsdelivr.net/npm/vue"></script>
     <body>
         <div id="app-10">
             <p>{{ message }} {{ fullName }}!</p>
         </div>
+        <script>
+                const vm = new Vue({
+                    el: "#app-10",
+                    data: {
+                        message: 'Hello you friggin',
+                        firstName: 'Foo',
+                        lastName: 'Bar',
+                    },
+                    computed: {
+                        fullName: {
+                            get: function () {
+                                return this.firstName + ' ' + this.lastName
+                            },
+                            set: function (value) {
+                                let names = value.split(' ')
+                                this.firstName = names[0]
+                                this.lastName = names[names.length - 1]
+                            }
+                        }
+                    }
+                })
+            </script>
     </body>
-</html> -->
+</html>
