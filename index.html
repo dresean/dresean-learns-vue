@@ -402,7 +402,7 @@
 
 
 
-<template v-if="isVisible">
+<!-- <template v-if="isVisible">
     <ul>
         <li>Home</li>
         <li>About</li>
@@ -410,4 +410,45 @@
         <li>News</li>
         <li>Contact</li>
     </ul>
-</template>
+</template> -->
+
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="app">
+            <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+            <template
+            v-if="loginType === 'username'"
+            key="username-input">
+                <label>Username</label>
+                <input placeholder="Please enter your username" :style="stylesObject">
+            </template>
+            <template
+            v-else="loginType === 'email'"
+            key="email-input"
+            >
+                <label>Email</label>
+                <input placeholder="please enter your email" :style="stylesObject">
+            </template>
+            <button @click="handleClick">Toggle Login Type</button>
+        <script>
+            let vm = new Vue({
+                el: "#app",
+                data: {
+                    loginType: 'username',
+                    stylesObject: {
+                        width: '200px'
+                    }
+                },
+                methods: {
+                    handleClick: function () {
+                        return this.loginType === 'username' ? this.loginType = 'email' : this.loginType = 'username'
+                    }
+                }
+            })
+        </script>
+        </div>
+    </body>
+</html>
+
