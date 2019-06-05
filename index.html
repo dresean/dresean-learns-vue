@@ -209,7 +209,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 </head>
@@ -233,5 +233,54 @@
             }
         })
     </script>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app-9">
+            <p> {{ message }} {{ fullName }}!</p>
+        </div>
+        <script>
+                let vm = new Vue({
+                    el: "#app-9",
+                    data: {
+                        firstName: "Dre'Sean",
+                        lastName: "Williams",
+                        message: "Hello",
+                        fullName: 'Foo Manchoo'
+                    },
+                    watch: {
+                        firstName: function (val) {
+                            return this.fullName = val + ' ' + this.lastName
+                        },
+                        lastName: function (val) {
+                            return this.fullName = this.firstName + ' ' + val
+                        }
+                    }
+                })
+            </script>
+    </body>
 </html>
 
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="app-10">
+            <p>{{ message }} {{ fullName }}!</p>
+        </div>
+    </body>
+</html> -->
