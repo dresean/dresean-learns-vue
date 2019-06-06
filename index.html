@@ -534,10 +534,15 @@
         <script src="https:cdn.jsdelivr.net/npm/vue"></script>
         <div id="app">
             <ul>
-                <li v-for="(value, key, index) in object">
-                    {{ key }} : is at index {{ index }}
+                <li 
+                v-for="(value, key, index) in object"
+                :key="key.index">
+                    {{ key }} : {{ value }}
                 </li>
             </ul>
+            <button @click="addObject">Add</button>
+            <button @click="removeObject">Remove</button>
+            <p v-if="checkCount() === true">No More Object!s</p>
         </div>
         <script>
                 let vm = new Vue({
@@ -549,6 +554,34 @@
                             kabop: 'thing',
                             foo: 'baz',
                             bar: 'pug',
+                        },
+                        list: [
+                            {rain: 'drop'},
+                            {drop: 'top'},
+                            {fuggin: 'on yo bih'},
+                            {she: 'a thot'},
+                            {thot: 'thot!'}
+                        ],
+                        count: 0
+                    },
+                    methods: {
+                        addObject: function () {
+                            this.object = Object.assign({}, this.object, this.list[this.count])
+                            this.count += 1
+                            return
+                            /*
+                            or this can be dont
+                            vm.$set(object, list[count].Object.keys[0], list[count].Object.values[0])
+                            count += 1
+                            return
+                            */
+                        },
+                        checkCount: function () {
+                            if(this.count >= this.list.length) return true
+                        },
+                        removeObject: function () {
+                            const keys = Object.keys(this.object)
+                            Vue.delete(this.object, keys[keys.length-1])
                         }
                     }
                 })
