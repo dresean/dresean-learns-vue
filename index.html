@@ -490,7 +490,7 @@
     </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
     </head>
@@ -523,5 +523,35 @@
                 })
             </script>
     </body>
-</html>
+</html> -->
 
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app">
+            <ul>
+                <li v-for="(value, key, index) in object">
+                    {{ key }} : is at index {{ index }}
+                </li>
+            </ul>
+        </div>
+        <script>
+                let vm = new Vue({
+                    el: "#app",
+                    data: {
+                        object: {
+                            thing: 'person',
+                            shaboop: 'place',
+                            kabop: 'thing',
+                            foo: 'baz',
+                            bar: 'pug',
+                        }
+                    }
+                })
+            </script>
+    </body>
+</html>
