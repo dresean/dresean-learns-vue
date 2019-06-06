@@ -412,7 +412,7 @@
     </ul>
 </template> -->
 
-<html>
+<!-- <html>
     <head>
     </head>
     <body>
@@ -449,6 +449,44 @@
             })
         </script>
         </div>
+    </body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app">
+            <span v-show="ok">
+                <button
+                @click="handleClick"
+                >
+                <p :style="stylesObject">Renders automatically in the DOM</p>
+                </button>
+            </span>
+        </div>
+        <script>
+                let vm = new Vue({
+                    el: "#app",
+                    data: {
+                        ok: true,
+                        stylesObject: {
+                            color: 'green',
+                            'box-sizing': 'border-box',
+                            border: '1px blue dotted',
+                            margin: 'auto'
+                        }
+                    },
+                    methods: {
+                        handleClick: function () {
+                            return window.alert('You clicked a button, oh snap!')
+                        }
+                    }
+                })
+        </script>
     </body>
 </html>
 
