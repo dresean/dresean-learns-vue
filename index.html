@@ -590,7 +590,7 @@
 </html> -->
 
 
-<!DOCTYPE>
+<!-- <!DOCTYPE>
 <html>
 
 <body>
@@ -624,34 +624,93 @@
                     startsWithVowel: function () {
                         return this.items.filter(function (item) {
                             console.log(item[0])
-                           switch(item[0]) {
-                               case 'a':
-                               return item
-                               break
-                               case 'e':
-                               return item
-                               break
-                               case 'i':
-                               return item
-                               break
-                               case 'o':
-                               return item
-                               break
-                               case 'u':
-                               return item
-                               break
-                               default:
-                               break
-                           }
+                        switch(item[0]) {
+                            case 'a':
+                            return item
+                            break
+                            case 'e':
+                            return item
+                            break
+                            case 'i':
+                            return item
+                            break
+                            case 'o':
+                            return item
+                            break
+                            case 'u':
+                            return item
+                            break
+                            default:
+                            break
+                        }
                         })
                     }
                 }
             })
-        
         </script>
 </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app">
+            <ul>
+                <li v-for="n in startsWithAConstant(items)">
+                    {{ n }}
+                </li>
+            </ul>
+        </div>
+        <script>
+                let vm = new Vue({
+                            el: "#app",
+                            data: {
+                                items: [
+                                    'about',
+                                    'babies',
+                                    'chocolate',
+                                    'igloo',
+                                    'echo',
+                                    'dancing',
+                                    'out',
+                                    'panda',
+                                    'uncle',
+                                    'army',
+                                    'master'
+                                ]
+                            },
+                            methods: {
+                                startsWithAConstant: function (items) {
+                                    return items.filter(function (item) {
+                                        switch(item[0]) {
+                                            case 'a':
+                                            return null
+                                            break
+                                            case 'e':
+                                            return null
+                                            break
+                                            case 'i':
+                                            return null
+                                            break
+                                            case 'o':
+                                            return null
+                                            break
+                                            case 'u':
+                                            return null
+                                            break
+                                            default:
+                                            return item
+                                            break
+                                        }
+                                    })
+                                }
+                            }
+                })
+            </script>
+    </body>
 </html>
-
-
-
-
