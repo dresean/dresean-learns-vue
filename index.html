@@ -653,7 +653,7 @@
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
     </head>
@@ -714,3 +714,33 @@
             </script>
     </body>
 </html>
+ -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app">
+            <span v-for="n in 10"
+            :style="styleObject">
+            {{ n }}
+        </span>
+        </div>
+        <script>
+            const vm = new Vue({
+                el: "#app",
+                data: {
+                    styleObject: {
+                        display: 'block',
+                        'text-align': 'center',
+                        border: '5px black double'
+                    }
+                }
+            })
+            </script>
+    </body>
+</html>
+
