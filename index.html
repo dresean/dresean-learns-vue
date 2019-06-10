@@ -526,7 +526,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
     </head>
@@ -587,4 +587,71 @@
                 })
             </script>
     </body>
+</html> -->
+
+
+<!DOCTYPE>
+<html>
+
+<body>
+    <script src="https:cdn.jsdelivr.net/npm/vue"></script>
+    <div id="app">
+        <ul>
+            <li v-for="n in startsWithVowel">
+                {{n}}
+            </li>
+        </ul>
+    </div>
+    <script>
+            let vm = new Vue({
+                el: "#app",
+                data: {
+                    items: [
+                        'about',
+                        'babies',
+                        'chocolate',
+                        'igloo',
+                        'echo',
+                        'dancing',
+                        'out',
+                        'panda',
+                        'uncle',
+                        'army',
+                        'master'
+                    ]
+                },
+                computed: {
+                    startsWithVowel: function () {
+                        return this.items.filter(function (item) {
+                            console.log(item[0])
+                           switch(item[0]) {
+                               case 'a':
+                               return item
+                               break
+                               case 'e':
+                               return item
+                               break
+                               case 'i':
+                               return item
+                               break
+                               case 'o':
+                               return item
+                               break
+                               case 'u':
+                               return item
+                               break
+                               default:
+                               break
+                           }
+                        })
+                    }
+                }
+            })
+        
+        </script>
+</body>
 </html>
+
+
+
+
