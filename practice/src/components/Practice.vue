@@ -1,50 +1,4 @@
-<!-- <template>
-<div>
-    <ul>
-      <li v-for="(n, index) in startsWithConstant(words) key='index'> {{ n }} </li>
-    </ul>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'Hello',
-  data () {
-    words: ["geeks", "for", "unbrella", "geeks", "a", "portal", "bacon", "to", "learn", "can", "be", "computer", "science", "zoom", "yup", "apple", "fire", "in", "be", "data", "geeks", "alpha"]
-  },
-  methods: {
-    startsWithConstant: function(words) {
-      return words.filter(function (word) {
-        switch(word[0].toLowercase()) {
-          case "a":
-            return word
-            break
-          case "e":
-            return word
-            break
-          case "i":
-            return word
-            break
-          case "o":
-            return word
-            break
-          case "u":
-            return word
-            break
-          default:
-            return null
-            break
-        }
-      })
-    }
-  }
-}
-</script>
-
-<style>
-
-</style> -->
-
+<!--
 <template>
   <div class="list">
     <ul>
@@ -101,3 +55,44 @@ export default {
     padding-left: 30px
 </style>
 
+--> 
+
+<template>
+  <div>
+    <ul>
+      <li
+      v-for='n in todoList'
+      v-if='!n.completed'
+      >
+      {{ n.todo }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+    data() {
+      return {
+        todoList: [
+          {todo: 'call mom', completed: false},
+          {todo: 'call dad', completed: true},
+          {todo: 'feed cat', completed: true},
+          {todo: 'walk dog', completed: false},
+          {todo: 'cook dinner', completed: false},
+          {todo: 'do laundry', completed: true},
+          {todo: 'clean room', completed: true},
+        ]
+      }
+    }
+}
+</script>
+
+<style lang='sass' scoped>
+  li
+    text-align: left
+    margin: auto
+    font-size: 50px
+  ul
+    padding-left: 10%
+</style>
