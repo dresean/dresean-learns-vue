@@ -59,14 +59,23 @@
 
 <template>
   <div>
-    <ul>
-      <li
-      v-for='n in todoList'
-      v-if='!n.completed'
-      >
-      {{ n.todo }}
-      </li>
-    </ul>
+    <template>
+      <ul>
+        <li
+        v-for='n in todoList'
+        v-if='!n.completed'
+        >
+        {{ n.todo }}
+        </li>
+      </ul>
+    </template>
+    <template>
+        <ul v-if='newTodos.length > 0'>
+          <hr/>
+          <li v-for='n in newTodos' id='new'>{{ n }}</li>
+        </ul>
+          <p v-else>No new todos!</p>
+    </template>
   </div>
 </template>
 
@@ -82,7 +91,8 @@ export default {
           {todo: 'cook dinner', completed: false},
           {todo: 'do laundry', completed: true},
           {todo: 'clean room', completed: true},
-        ]
+        ],
+        newTodos: ['thing']
       }
     }
 }
@@ -95,4 +105,6 @@ export default {
     font-size: 50px
   ul
     padding-left: 10%
+  #new
+    color: green
 </style>
