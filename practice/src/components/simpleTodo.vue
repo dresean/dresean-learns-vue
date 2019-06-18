@@ -2,14 +2,14 @@
     <div>
         <p>Add todos below, click to delete.</p>
         <input
-        v-on:keyup.enter='addTodo'
+        @keyup.enter='addTodo'
         v-model='newTodo'
         class='todo'>
             <ul v-if='todos.length'>
-                <li v-for='(n, index) in todos'
-                :key='index'
-                @click='removeTodo'>
-                {{ n }}
+                <li v-for='(n, key) in todos'
+                :key='key'
+                @click.prevent='removeTodo(key)'>
+                {{ n.name }}
                 </li>
             </ul>
             <p v-else>No tasks available, get to work!</p>
@@ -23,17 +23,18 @@ export default {
         return {
             todos: [],
             newTodo: '',
+            count: 0
         }
     },
     methods: {
         addTodo: function() {
-            this.todos.push(this.newTodo)
+            this.todos.push({name: this.newTodo, id: this.count})
             this.newTodo = ''
+            this.count += 1
             return
         },
-        removeTodo: function() {
-            this.todos.splice(this.todos.index, 1)
-            document.window.alert('Todo removed!')
+        removeTodo: function(index) {
+            this.todos.splice(index, 1)
             return
         }
     }
