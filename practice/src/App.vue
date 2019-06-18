@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Practice/>
+    <simpleTodo />
   </div>
 </template>
 
 <script>
-import Practice from './components/Practice.vue'
+import simpleTodo from './components/simpleTodo.vue'
 
 export default {
   name: 'app',
   components: {
-    Practice
+    simpleTodo
   }
 }
 </script>
@@ -25,3 +25,26 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+<!--
+<template>
+  <div>
+    <p>DANG</p>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang='sass' scoped>
+  p
+    font-size: 1000px
+    word-wrap: wrap
+    word-break: break-word
+    hyphen: auto
+    width: 100%
+</style>
+--> 
