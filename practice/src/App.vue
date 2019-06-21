@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <simpleTodo />
+    <keyboardEvents/>
   </div>
 </template>
 
 <script>
-import simpleTodo from './components/simpleTodo.vue'
+import keyboardEvents from './components/keyboardEvents.vue'
 
 export default {
   name: 'app',
   components: {
-    simpleTodo
+    keyboardEvents,
   }
 }
 </script>

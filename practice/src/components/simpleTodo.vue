@@ -28,9 +28,8 @@ export default {
     },
     methods: {
         addTodo: function() {
-            this.todos.push({name: this.newTodo, id: this.count})
+            this.todos.push({name: this.newTodo})
             this.newTodo = ''
-            this.count += 1
             return
         },
         removeTodo: function(index) {
