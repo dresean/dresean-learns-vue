@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <keyboardEvents/>
+    <!-- <keyboardEvents/> -->
+    <Forms />
   </div>
 </template>
 
 <script>
+
 import keyboardEvents from './components/keyboardEvents.vue'
+import Forms from '@/components/forms.vue'
 
 export default {
   name: 'app',
   components: {
     keyboardEvents,
+    Forms
   }
 }
 </script>
