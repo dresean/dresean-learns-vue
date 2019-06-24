@@ -31,6 +31,22 @@
             value='Craig Green'>
         </div>
         <span>{{ checked }}</span>
+        <br/>
+        <br/>
+        <hr/>
+        <label for=''>True</label>
+        <input type='radio'
+        id='true'
+        v-model='selected'
+        value='true'/>
+        <br/>
+        <label for='false'>False</label>
+        <input type='radio'
+        v-model='selected'
+        id='false'
+        value='false'/>
+        <br/>
+        <span>{{ selected }}</span>
     </div>
 </template>
 
@@ -40,6 +56,7 @@ export default {
     data() {
         return {
         checked: [],
+        selected: [],
         count: 0
         }
     },
