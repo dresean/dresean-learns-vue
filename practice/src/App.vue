@@ -3,7 +3,13 @@
     <!-- <keyboardEvents/> -->
     <!-- <Forms /> -->
     <!-- <MoreForms /> -->
-    <BlogPost v-for='post in fetched' :post='post' :key='post.id'/>
+    <div :style='{fontSize: postFontSize + "em"}'>
+    <BlogPost
+    v-for='post in fetched'
+    :post='post'
+    :key='post.id'
+    @enlarge-text='postFontSize += 0.1'/>
+    </div>
   </div>
 </template>
 
@@ -32,7 +38,13 @@ export default {
             {title: 'You win, a title', id: 5},
             {title: 'Not a title in public', id: 6},
         ],
-        fetched: []
+        fetched: [],
+        postFontSize: 1
+    }
+  },
+  methods: {
+    'enlarge-text': function () {
+
     }
   },
   created: function (){
