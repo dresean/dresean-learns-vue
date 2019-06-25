@@ -1,8 +1,9 @@
+<!--
 <template>
   <div id="app">
-    <!-- <keyboardEvents/> -->
-    <!-- <Forms /> -->
-    <!-- <MoreForms /> -->
+      <keyboardEvents/>
+    <Forms />
+    <MoreForms />
     <div :style='{fontSize: postFontSize + "em"}'>
     <BlogPost
     v-for='post in fetched'
@@ -68,6 +69,7 @@ export default {
   margin-top: 60px;
 }
 </style>
+-->
 
 <!--
 <template>
@@ -90,4 +92,79 @@ export default {
     hyphen: auto
     width: 100%
 </style>
---> 
+-->
+<!--
+<template>
+  <div id='app'>
+    <div :style='{fontSize: postFontSize + "em"}'>
+      <Comments v-for='post in posts'
+      :post='post'
+      @enlarge-text='postFontSize += $event'
+      @decrease-text='onTextDecrease'
+      :key='post.id'/>
+    </div>
+  </div>
+</template>
+
+
+<script>
+import Comments from '@/components/comments.vue'
+
+export default {
+  name: 'app',
+  components: {
+    Comments
+  },
+  data() {
+    return {
+      postFontSize: 1,
+      posts: []
+    }
+  },
+  methods: {
+    onTextDecrease: function(decreaseValue) {
+      this.postFontSize -= decreaseValue
+    }
+  },
+  created: function () {
+    let vm = this
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => vm.posts = data)
+  }
+}
+</script>
+
+<style>
+
+</style>
+-->
+
+<template>
+  <div id='app'>
+    <br/>
+    <label>Custom Input</label>
+    <br/>
+    <CustomInput v-model='searchText' />
+  </div>
+</template>
+
+<script>
+import CustomInput from '@/components/customInput.vue'
+
+export default {
+  name: 'app',
+  components: {
+    CustomInput
+  },
+  data() {
+    return {
+      searchText: ''
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
