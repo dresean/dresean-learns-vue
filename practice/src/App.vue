@@ -3,7 +3,7 @@
     <!-- <keyboardEvents/> -->
     <!-- <Forms /> -->
     <!-- <MoreForms /> -->
-    <BlogPost v-for='post in posts' :title='post.title' :key='post.title'/>
+    <BlogPost v-for=' fetch in fetched' :title='fetch.title' :key='fetch.title'/>
   </div>
 </template>
 
@@ -31,8 +31,17 @@ export default {
             {title: 'Who guessed this would be a title?', id: 4},
             {title: 'You win, a title', id: 5},
             {title: 'Not a title in public', id: 6},
-        ]
+        ],
+        fetched: []
     }
+  },
+  created: function (){
+    let vm = this
+    fetch('https:jsonplaceholder.typicode.com/posts')
+    .then(response => {
+      return response.json()
+    })
+    .then(data => vm.fetched = data)
   }
 }
 </script>
