@@ -1,13 +1,15 @@
 <template>
     <div>
-        <p>{{ title }}</p>
+        <p>{{ post.title }}</p>
+        <p>{{ post.body}}</p>
+        <p>{{ post.userId }}</p>
     </div>
 </template>
 
 <script>
 export default {
     name: 'BlogPost',
-    props: ['title'],
+    props: ['post'],
 }
 </script>
 

@@ -3,7 +3,7 @@
     <!-- <keyboardEvents/> -->
     <!-- <Forms /> -->
     <!-- <MoreForms /> -->
-    <BlogPost v-for=' fetch in fetched' :title='fetch.title' :key='fetch.title'/>
+    <BlogPost v-for='post in fetched' :post='post' :key='post.id'/>
   </div>
 </template>
 
