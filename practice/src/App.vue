@@ -2,7 +2,8 @@
   <div id="app">
     <!-- <keyboardEvents/> -->
     <!-- <Forms /> -->
-    <MoreForms />
+    <!-- <MoreForms /> -->
+    <BlogPost v-for='post in posts' :title='post.title' :key='post.title'/>
   </div>
 </template>
 
@@ -11,13 +12,27 @@
 // import keyboardEvents from './components/keyboardEvents.vue'
 import Forms from '@/components/forms.vue'
 import MoreForms from '@/components/moreForms.vue'
+import BlogPost from '@/components/BlogPost.vue'
 
 export default {
   name: 'app',
   components: {
     // keyboardEvents,
     // Forms
-    MoreForms
+    // MoreForms
+    BlogPost
+  },
+  data() {
+    return {
+      posts: [
+            {title: 'A Title', id: 1},
+            {title: 'Another Title', id: 2},
+            {title: 'Another-nother title', id: 3},
+            {title: 'Who guessed this would be a title?', id: 4},
+            {title: 'You win, a title', id: 5},
+            {title: 'Not a title in public', id: 6},
+        ]
+    }
   }
 }
 </script>
